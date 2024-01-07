@@ -28,9 +28,6 @@ public class AppFrame extends JFrame{
         adder.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                public void mousePressed(MouseEvent e){
-
-                }
             }
         });
     }
