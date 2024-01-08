@@ -8,6 +8,7 @@ import java.awt.event.MouseEvent;
 public class AppFrame extends JFrame{
     TitleBar title = new TitleBar();
     BTnPannel btnp = new BTnPannel();
+    addList lists = new addList();
 
     private JButton adder;
     private JButton clear;
@@ -17,6 +18,7 @@ public class AppFrame extends JFrame{
         this.setVisible(true);
         this.add(this.title, BorderLayout.NORTH);
         this.add(this.btnp, BorderLayout.SOUTH);
+        this.add(this.lists, BorderLayout.CENTER);
 
         adder = btnp.getAddTask();
         clear = btnp.getClearTask();
