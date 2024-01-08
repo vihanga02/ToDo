@@ -13,7 +13,7 @@ public class AppFrame extends JFrame{
     private JButton adder;
     private JButton clear;
     public AppFrame(){
-        this.setSize(400,700);
+        this.setSize(500,700);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setVisible(true);
         this.add(this.title, BorderLayout.NORTH);

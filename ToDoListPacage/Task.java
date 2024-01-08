@@ -10,29 +10,31 @@ public class Task extends JPanel{
     private JButton clear;
 
     public Task(){
-        GridLayout layoutTask = new GridLayout(1,4);
+        GridLayout layoutTask = new GridLayout(1,8);
         layoutTask.setHgap(5);
         this.setPreferredSize(new Dimension(400,20));
         this.setBackground(new Color(255,234,17));
         this.setLayout(layoutTask);
 
         index = new JLabel();
-        index.setPreferredSize(new Dimension(20,10));
+        index.setPreferredSize(new Dimension(10,10));
         index.setHorizontalAlignment(JLabel.LEFT);
-        index.setBackground(new Color(255,234,17));
+        index.setBackground(new Color(255,234,197));
         this.add(this.index);
 
         taskName = new JTextField("Enter task");
-        taskName.setPreferredSize(new Dimension(10,20));
+        taskName.setPreferredSize(new Dimension(30,20));
         taskName.setBorder(BorderFactory.createEmptyBorder());
-        this.setBackground(new Color(255,234,17));
+        this.setBackground(new Color(155,154,155));
         this.add(this.taskName);
 
         adder = new JButton("Done");
         adder.setPreferredSize(new Dimension(10,20));
+        adder.setBackground(new Color(0, 150, 20));
         this.add(this.adder);
 
         clear = new JButton("Clear");
+        clear.setBackground(new Color(180, 20, 20));
         clear.setPreferredSize(new Dimension(10,20));
         this.add(this.clear);
     }
