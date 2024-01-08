@@ -8,7 +8,7 @@ import java.awt.event.MouseEvent;
 public class AppFrame extends JFrame{
     TitleBar title = new TitleBar();
     BTnPannel btnp = new BTnPannel();
-    addList lists = new addList();
+    AddList lists = new AddList();
 
     private JButton adder;
     private JButton clear;
@@ -30,6 +30,44 @@ public class AppFrame extends JFrame{
         adder.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                Task task = new Task();
+                lists.add(task);
+                lists.indexNum();
+                revalidate();
+
+                JButton done = task.getDonej();
+                done.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        task.doneStatus();
+                        revalidate();
+                    }
+                });
+
+                JButton remove = task.getremovej();
+                remove.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        lists.remove(task);
+                        lists.indexNum();
+                        revalidate();
+                        repaint();
+                    }
+                });
+            }
+        });
+
+        clear.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                Component[] taskList = lists.getComponents();
+                for (int i= 0; i < taskList.length; i++){
+                    if (taskList[i] instanceof Task){
+                        lists.remove((Task)taskList[i]);
+                    }
+                }
+                revalidate();
+                repaint();
             }
         });
     }

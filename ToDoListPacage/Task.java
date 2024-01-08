@@ -26,6 +26,7 @@ public class Task extends JPanel{
         taskName.setPreferredSize(new Dimension(10,20));
         taskName.setBorder(BorderFactory.createEmptyBorder());
         this.setBackground(new Color(255,234,17));
+        this.add(this.taskName);
 
         adder = new JButton("Done");
         adder.setPreferredSize(new Dimension(10,20));
@@ -34,5 +35,28 @@ public class Task extends JPanel{
         clear = new JButton("Clear");
         clear.setPreferredSize(new Dimension(10,20));
         this.add(this.clear);
+    }
+
+    public void writeIndex1(int n){
+        this.index.setText(String.valueOf(n));
+        this.revalidate();
+    }
+
+    public JButton getDonej(){
+        return  this.adder;
+    }
+
+    public JButton getremovej(){
+        return this.clear;
+    }
+
+    public void doneStatus(){
+        this.taskName.setBackground(Color.green);
+        this.index.setBackground(Color.green);
+        this.adder.setBackground(Color.green);
+        this.clear.setBackground(Color.green);
+        this.setBackground(Color.green);
+
+        revalidate();
     }
 }
